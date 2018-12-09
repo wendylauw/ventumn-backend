@@ -16,6 +16,10 @@ app.use(express.static(__dirname + '/public'))
 var user_id
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors());
+var swaggerUi = require('swagger-ui-express')
+	swaggerDocument = require('./swagger.json');
+	
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(session({
     key : 'user_id',

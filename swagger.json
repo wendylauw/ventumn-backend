@@ -1,0 +1,10 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "0.0.1",
+		"title": "VentUMN Node.js Mobile Application API",
+		"description": "VentUMN Node.js Mobile Application API"
+	},
+	"host": "https://ventumn-backend.herokuapp.com",
+	"basePath": "/"
+}
