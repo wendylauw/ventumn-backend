@@ -19,7 +19,7 @@ app.use(cors());
 var swaggerUi = require('swagger-ui-express')
 	swaggerDocument = require('./swagger.json');
 	
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(session({
     key : 'user_id',
