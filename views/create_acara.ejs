@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<% include script.ejs %>
+<body class="hold-transition skin-blue sidebar-mini">
+<%include header.ejs %>
+<% include sidebar_himti.ejs %>
+
+<div class="content-wrapper">
+            <div>
+        <%= typeof msg != 'undefined' ? msg : '' %>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="file-field input-field">
+        <div class="btn grey">
+          <span>File</span>
+          <input name="myImage" type="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+<form action="/createEvent" method="POST">
+    <div class="box-body">
+        <h1>Create Event </h1>
+        <br>
+        <div class="form-group">
+            <label for="prodi">Program Studi</label>
+            <input type="text" class="form-control" name="prodi" id="prodi" placeholder="HIMTI">
+        </div>
+        <div class="form-group">
+            <label for="nama">Nama Event</label>
+            <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Event">
+        </div>
+        <div class="form-group">
+            <label for=price>Price</label>
+            <input type="text" name="price" class="form-control" id="price" placeholder="price" >
+        </div>
+        <div class="form-group">
+            <label for=deskripsi>Deksripsi Event</label>
+            <input type="text" name="deskripsi" class="form-control" id="deskripsi" placeholder="deksripsi" >
+        </div>
+        <div class="form-group">
+            <label for=tanggalMulai>Tanggal Mulai</label>
+            <input type="date" name="tanggalMulai" class="form-control" id="tanggalMulai" >
+        </div>
+        <div class="form-group">
+            <label for=tanggalSelesai>Tanggal Selesai</label>
+            <input type="date" name="tanggalSelesai" class="form-control" id="tanggalSelesai" >
+        </div>
+        <div class="form-group">
+            <label for=waktuMulai>Waktu Mulai</label>
+            <input type="time" name="waktuMulai" class="form-control" id="waktuMulai">
+        </div>
+        <div class="form-group">
+            <label for=waktuSelesai>Waktu Selesai</label>
+            <input type="time" name="waktuSelesai" class="form-control" id="waktuSelesai">
+        </div>
+            <div class="form-group">
+        <label for=poster>Poster</label>
+            <input type="text" name="poster" class="form-control" id="poster" placeholder="URL Poster" value="http://localhost:8080<%= typeof file != 'undefined' ? file : '' %>" >
+        </div>
+        <div class="form-group">
+            <label for=latitude>Latitude</label>
+            <input type="text" name="latitude" class="form-control" id="latitude" placeholder="-6.5434" >
+        </div>
+        <div class="form-group">
+            <label for=longitude>Longitude</label>
+            <input type="text" name="longitude" class="form-control" id="longitude" placeholder="7.5434" >
+        </div>
+        <div class="form-group">
+            <label for=lokasi>Lokasi</label>
+            <input type="text" name="lokasi" class="form-control" id="lokasi" placeholder="Universitas Multimedia Nusantara" >
+        </div>
+
+        <div class="col-md-3">
+        <input type="submit" name="" value="Submit" class="btn btn-block btn-primary" style="width: 70px ;margin-top: 10px">
+        </div>
+
+    </div>
+</form>
+</div>
+<% include footer.ejs %>
+</body>

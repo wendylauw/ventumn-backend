@@ -17,7 +17,15 @@ const UserSchema = new Schema({
 	passwd1:{
 		type: String,
 		required: true
-	}
+	},
+	Major:{
+		type: String,
+		required: true
+	},
+	passwd1:{
+		type: String,
+		required: true
+	},
 })
 //hash user password before saving into database
 UserSchema.pre('save',function(next){

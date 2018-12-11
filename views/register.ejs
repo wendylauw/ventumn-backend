@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<% include script.ejs %>
+<body class="hold-transition skin-blue sidebar-mini">
+<%include header.ejs %>
+<% include sidebar.ejs %>
+<div class="content-wrapper">
+<form action="/register" method="POST">
+    <div class="box-body">
+        <h1>Register </h1>
+        <br>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="email@mail.com">
+        </div>
+        <div class="form-group">
+            <label for=name>Nama Lengkap</label>
+            <input type="text" name="name" class="form-control" id="name" placeholder="Nama Lengkap" >
+        </div>
+        <div class="form-group">
+            <label for="passwd1">Password</label>
+            <input type="password" name="passwd1" class="form-control"
+            id="passwd1" placeholder="Password">
+        </div>
+        <div class="col-md-3">
+        <input type="submit" name="" value="Submit" class="btn btn-block btn-primary" style="width: 70px ;margin-top: 10px">
+        
+    </div>
+    </div>
+</form>
+</div>
+<% include footer.ejs %>
+</body>

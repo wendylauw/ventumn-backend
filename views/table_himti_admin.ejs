@@ -1,0 +1,79 @@
+<br>
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+                  <h3 class="box-title">Data Table With Full Features</h3>
+                  
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th style="display:none">ID </th>
+                  <th>Prodi</th>
+                  <th>Nama Event</th>
+                  <th>Price</th>
+                  <th>Desripsi</th>
+                  <th>Tanggal Mulai</th>
+                  <th>Tanggal Selesai</th>
+                  <th>Waktu Mulai</th>
+                  <th>Waktu Selesai</th>
+                  <th>Poster</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
+                  <th>Lokasi</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="event">
+                  <% for(var i=0; i<event.length; i++) { %>
+                  <td style="display: none"><%= event[i]._id %></td>
+                  <td><%= event[i].prodi %></td>
+                  <td><%= event[i].nama %></td>
+                  <td><%= event[i].price %></td>
+                  <td><%= event[i].deskripsi %></td>
+                  <td><%= event[i].tanggalMulai %></td>
+                  <td><%= event[i].tanggalSelesai %></td>
+                  <td><%= event[i].waktuMulai %></td>
+                  <td><%= event[i].waktuSelesai %></td>
+                  <td><%= event[i].poster %></td>
+                  <td><%= event[i].latitude %></td>
+                  <td><%= event[i].longitude %></td>
+                  <td><%= event[i].lokasi %></td>
+                  </tr>
+                  <% } %>
+
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Prodi</th>
+                  <th>Nama Event</th>
+                  <th>Price</th>
+                  <th>Desripsi</th>
+                  <th>Tanggal Mulai</th>
+                  <th>Tanggal Selesai</th>
+                  <th>Waktu Mulai</th>
+                  <th>Waktu Selesai</th>
+                  <th>Poster</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
+                  <th>Lokasi</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+</div>

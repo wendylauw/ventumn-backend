@@ -4,11 +4,15 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const EventSchema = new Schema({
+	prodi: {
+		type: String,
+		required : true
+	},
 	nama: {
 		type: String,
 		required : true
 	},
-	jenis: {
+	price: {
 		type: String,
 		required : true
 	},
@@ -36,10 +40,18 @@ const EventSchema = new Schema({
 		type: String,
 		required: true
 	},
-	kuota:{
+	latitude:{
 		type: String,
 		required: true
-	}
+	},
+	longitude: {
+		type: String,
+		required : true
+	},
+	lokasi: {
+		type: String,
+		required : true
+	},
 })
 
 
