@@ -16,11 +16,11 @@ const UserSchema = new Schema({
 	},
 	CV:{
 		type: String,
-		required: true
+		required: false
 	},
 	Major:{
 		type: String,
-		required: true
+		required: false
 	},
 	passwd1:{
 		type: String,
