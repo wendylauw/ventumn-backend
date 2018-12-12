@@ -33,7 +33,6 @@
 				}
 			},
 			"produces": [
-				"application/json",
 				"text/plain"
 			],
 			"parameters": [
@@ -44,6 +43,40 @@
 						"example": {
 							"email": "test@email.com",
 							"name": "John Doe",
+							"passwd1": "password"
+						}
+					}
+				}
+			]
+		},
+		"/checkLogin": {
+			"post": {
+				"description": "User Login",
+				"responses": {
+					"200": {
+						"description": "Success",
+						"examples": {
+							"text/plain": "<user_id>"
+						}
+					},
+					"401": {
+						"description": "Not found",
+						"examples": {
+							"text/plain": "Sorry, no one's"
+						}
+					}
+				}
+			},
+			"produces": [
+				"text/plain"
+			],
+			"parameters": [
+				{
+					"in": "body",
+					"required": true,
+					"schema": {
+						"example": {
+							"email": "test@email.com",
 							"passwd1": "password"
 						}
 					}
