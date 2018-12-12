@@ -84,7 +84,7 @@
 			]
 		},
 		"/getData": {
-			"post": {
+			"get": {
 				"description": "Get All Event",
 				"responses": {
 					"200": {
@@ -114,7 +114,7 @@
 			]
 		},
 		"/getOneData/{id}": {
-			"post": {
+			"get": {
 				"description": "Get One Event",
 				"responses": {
 					"200": {
