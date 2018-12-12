@@ -159,7 +159,7 @@ app.get('/getData',(req,res)=>{
 })
 })
 
-app.get('/getOneData/:id' + ,(req,res)=>{
+app.get('/getOneData/:id'  ,(req,res)=>{
   eventModel.findOne({_id : req.params.id},(err,eventInfo)=>{
     if(!eventInfo){
       res.json('Not found!')
