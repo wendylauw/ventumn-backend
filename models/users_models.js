@@ -14,7 +14,7 @@ const UserSchema = new Schema({
 		type: String,
 		required : true
 	},
-	passwd1:{
+	CV:{
 		type: String,
 		required: true
 	},
