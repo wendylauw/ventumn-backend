@@ -40,13 +40,9 @@ const EventSchema = new Schema({
 		type: String,
 		required: true
 	},
-	latitude:{
+	latLng:{
 		type: String,
 		required: true
-	},
-	longitude: {
-		type: String,
-		required : true
 	},
 	lokasi: {
 		type: String,

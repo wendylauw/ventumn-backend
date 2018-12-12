@@ -10,6 +10,7 @@ var jwt = require('jsonwebtoken')
 const userModel = require('./models/users_models')
 const eventModel = require('./models/event_models')
 const adminModel = require('./models/admin_models')
+const wishList = require('./models/wishlist_models.js')
 const mongoose = require('./config/database')
 app.set('view engine', 'ejs') 
 var session = require('express-session')
@@ -110,8 +111,7 @@ app.post('/createEvent',(req,res,next)=>{
     waktuMulai : req.body.waktuMulai,
     waktuSelesai : req.body.waktuSelesai,
     poster : req.body.poster,
-    latitude : req.body.latitude,
-    longitude : req.body.longitude,
+    latLng : req.body.latLng,
     lokasi : req.body.lokasi
   },(err,result)=>{
     if(err)
