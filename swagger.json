@@ -6,5 +6,52 @@
 		"description": "VentUMN Node.js Mobile Application API"
 	},
 	"host": "https://ventumn-backend.herokuapp.com",
-	"basePath": "/"
+	"basePath": "/",
+	"schemes": [
+		"https"
+	],
+	"produces": [
+		"application/json",
+		"text/plain"
+	],
+	"paths": {
+		"/docs": {
+			"get": {
+				"description": "Swagger Documentations Page"
+			}
+		},
+		"/signUp": {
+			"post": {
+				"description": "User Registration",
+				"responses": {
+					"200": {
+						"description": "Success",
+						"examples": {
+							"text/plain": "You are Registered!"
+						}
+					}
+				}
+			},
+			"produces": [
+				"application/json",
+				"text/plain"
+			],
+			"parameters": [
+				{
+					"in": "body",
+					"required": true,
+					"schema": {
+						"example": {
+							"email": "test@email.com",
+							"name": "John Doe",
+							"passwd1": "password"
+						}
+					}
+				}
+			]
+		}
+	},
+	"consumes": [
+		"application/json"
+	]
 }
