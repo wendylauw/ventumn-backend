@@ -131,8 +131,8 @@ app.post('/createEvent',(req,res,next)=>{
       var postData = JSON.stringify({
         "app_id": "fe379b5b-59b5-4059-83ef-9553898c4a9a", 
         "included_segments": ["All"], 
-        "contents": {"en": "Test Message"}, 
-        "headings":  {"en": "Test"}
+        "contents": {"en": result.deskripsi}, 
+        "headings":  {"en": "(New Event) VentUMN - " + result.nama}
       });
       var req = https.request(options, (res) => {
         console.log('statusCode:', res.statusCode);
