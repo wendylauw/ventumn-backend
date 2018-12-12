@@ -82,6 +82,36 @@
 					}
 				}
 			]
+		},
+		"/getData": {
+			"post": {
+				"description": "Get All Event",
+				"responses": {
+					"200": {
+						"description": "Success",
+						"examples": {
+							"application/json": [
+								{
+									"prodi": "prodi",
+									"nama": "nama",
+									"price": "10000",
+									"deskripsi": "deskripsi",
+									"tanggalMulai": "2018-04-21",
+									"tanggalSelesai": "2018-04-24",
+									"waktuMulai": "10:00",
+									"waktuSelesai": "12:00",
+									"poster": "poster",
+									"latLng": "-6.0451,60.123",
+									"lokasi": "lokasi"
+								}
+							]
+						}
+					}
+				}
+			},
+			"produces": [
+				"application/json"
+			]
 		}
 	},
 	"consumes": [
