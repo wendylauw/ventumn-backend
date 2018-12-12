@@ -7,6 +7,8 @@ var router = express.Router()
 var bodyParser = require('body-parser')
 var bcrypt = require('bcrypt')
 var jwt = require('jsonwebtoken')
+const https = require('https')
+const querystring = require('querystring')
 const userModel = require('./models/users_models')
 const eventModel = require('./models/event_models')
 const adminModel = require('./models/admin_models')
@@ -117,6 +119,36 @@ app.post('/createEvent',(req,res,next)=>{
     if(err)
       next(err)
     else{
+      var options = {
+        hostname: 'onesignal.com',
+        path: '/api/v1/notifications',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic OGVlZWNjMjctZDc2ZC00YTE2LTk3YTAtZDk3ZTYxNjM5ZjUz'
+        }
+      };
+      var postData = JSON.stringify({
+        "app_id": "fe379b5b-59b5-4059-83ef-9553898c4a9a", 
+        "included_segments": ["All"], 
+        "contents": {"en": "Test Message"}, 
+        "headings":  {"en": "Test"}
+      });
+      var req = https.request(options, (res) => {
+        console.log('statusCode:', res.statusCode);
+        console.log('headers:', res.headers);
+
+        res.on('data', (d) => {
+          process.stdout.write(d);
+        });
+      });
+
+      req.on('error', (e) => {
+        console.error(e);
+      });
+
+      req.write(postData);
+      req.end();
       res.redirect('/dashHimti')
     }
   })
