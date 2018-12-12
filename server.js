@@ -159,6 +159,18 @@ app.get('/getData',(req,res)=>{
 })
 })
 
+app.get('/getOneData/:id' + ,(req,res)=>{
+  eventModel.findOne({_id : req.params.id},(err,eventInfo)=>{
+    if(!eventInfo){
+      res.json('Not found!')
+    }else{
+      var response = eventInfo
+      console.log(response)
+      res.json(response)
+    }
+  })
+})
+
 
 
 app.post('/login',(req,res,next)=>{
