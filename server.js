@@ -12,7 +12,7 @@ const querystring = require('querystring')
 const userModel = require('./models/users_models')
 const eventModel = require('./models/event_models')
 const adminModel = require('./models/admin_models')
-const wishList = require('./models/wishlist_models.js')
+const registerModel = require('./models/register_models.js')
 const mongoose = require('./config/database')
 app.set('view engine', 'ejs') 
 var session = require('express-session')
@@ -102,6 +102,24 @@ app.post('/register',(req,res,next)=>{
       }
     })
 })
+
+app.post('/registerEvent',(req,res,next)=>{
+  registerModel.create({
+    id_user : req.body.id_user,
+    id_event : req.body.id_event
+  }),(err,result)=>{
+    if(err)
+      next(err)
+    else{
+    var response = "You are Registe to an event!"
+    res.json(response)
+    console.log(result)
+    }
+  }
+})
+
+
+
 app.post('/createEvent',(req,res,next)=>{
   eventModel.create({
     prodi : req.body.prodi,

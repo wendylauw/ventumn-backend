@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const WishlistSchema = new Schema({
+const RegisterSchema = new Schema({
 	id_user: {
 		type: String,
 		required : true
@@ -14,4 +14,4 @@ const WishlistSchema = new Schema({
 	}
 })
 
-module.exports = mongoose.model('Wishlist',WishlistSchema)
+module.exports = mongoose.model('Register',RegisterSchema)
