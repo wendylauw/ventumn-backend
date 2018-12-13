@@ -105,8 +105,8 @@ app.post('/register',(req,res,next)=>{
 
 app.post('/registerEvent',(req,res,next)=>{
   registerModel.create({
-    id_user : req.body.id_user,
-    id_event : req.body.id_event
+    id_user : req.body.idUser,
+    id_event : req.body.idEvent
   }),(err,result)=>{
     if(err)
       next(err)
