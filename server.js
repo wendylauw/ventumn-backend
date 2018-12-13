@@ -209,6 +209,12 @@ app.get('/getData',(req,res)=>{
 })
 })
 
+app.get('/getUserData/:id',(req,res)=>{
+  userModel.findOne({_id:req.params.id},(err,result)=>{
+    res.json(result)
+  })
+})
+
 app.get('/getOneData/:id'  ,(req,res)=>{
   eventModel.findOne({_id : req.params.id},(err,eventInfo)=>{
     if(!eventInfo){
