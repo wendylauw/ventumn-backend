@@ -177,6 +177,7 @@ app.post('/signUp',(req,res,next)=>{
   userModel.create({ 
     email: req.body.email,
     name: req.body.name, 
+    tanggalLahir : req.body.tanggalLahir,
     passwd1: req.body.passwd1 
   },(err, result)=> {
       if (err) 
