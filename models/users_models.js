@@ -14,6 +14,10 @@ const UserSchema = new Schema({
 		type: String,
 		required : true
 	},
+	tanggalLahir: {
+		type: String,
+		required : true
+	},
 	passwd1:{
 		type: String,
 		required: true
