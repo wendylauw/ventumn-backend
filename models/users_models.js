@@ -18,6 +18,10 @@ const UserSchema = new Schema({
 		type: String,
 		required: false
 	},
+	tanggalLahir:{
+		type: String,
+		required: false
+	},
 	Major:{
 		type: String,
 		required: false
